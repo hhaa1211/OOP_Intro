@@ -7,7 +7,7 @@ có thể trừu tượng hóa đối tượng theo hai hướng: Theo chức n�
 - là quá trình mô hình hóa phương thức của lớp dựa trên các hành động của đối tượng
   ví dụ: một chiếc ô tô có thể: khởi động máy, chạy, dừng lại,  tắt máy
   đây đều là hành động, hay còn gọi là chức năng của ô tô
-2.1 Các bước thực hiện
+3. Các bước thực hiện
   B1: tập hợp tất cả các hành động có thể có của các đối tượng
        vd: chúng ta có nhiều loại ô tô: Toyota, Honda, Ford
            mỗi chiếc xe có thể có các hành động như: Khởi động, chạy, dừng lại, tắt máy, bật đèn, phát tín hiệu cảnh báo
