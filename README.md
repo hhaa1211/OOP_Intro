@@ -13,11 +13,11 @@
 ## 1. Phương pháp tiếp cận truyền thống 
 ### a. Lập trình tuyến tính 
 * **Khái niệm:** Là phương pháp tổ chức mã nguồn theo luồng thực thi đơn giản, chạy tuyến tính từ trên xuống dưới mà không chia nhỏ thành các hàm hay khối lệnh phức tạp.
-* **Đặc điểm:** + Cấu trúc đơn luồng, Luồng chạy trực diện, cực kỳ dễ đọc. Nhưng khi quy mô chương trình mở rộng, mã nguồn nhanh chóng trở nên rườm rà, khó quản lý và không thể áp dụng cho các hệ thống phần mềm phức tạp.
+* **Đặc điểm:** Cấu trúc đơn luồng, Luồng chạy trực diện, cực kỳ dễ đọc. Nhưng khi quy mô chương trình mở rộng, mã nguồn nhanh chóng trở nên rườm rà, khó quản lý và không thể áp dụng cho các hệ thống phần mềm phức tạp.
 
 ### b. Lập trình cấu trúc 
 * **Khái niệm:** Phương pháp chia nhỏ hệ thống lớn thành các hàm/chương trình con tự chứa, kết hợp với các cấu trúc điều khiển chuẩn (vòng lặp, rẽ nhánh).
-* **Đặc điểm:** + Xoay quanh tư duy **"Chương trình = Cấu trúc dữ liệu + Giải thuật", giúp mã nguồn mạch lạc, dễ truy vết lỗi; các hàm con có thể gọi lại nhiều lần trong cùng một chương trình. Nhưng dữ liệu và giải thuật bị tách rời, khả năng tái sử dụng code giữa các dự án khác nhau kém; dễ bị phá vỡ cấu trúc khi xây dựng phần mềm quy mô lớn.
+* **Đặc điểm:** Xoay quanh tư duy "Chương trình = Cấu trúc dữ liệu + Giải thuật", giúp mã nguồn mạch lạc, dễ truy vết lỗi; các hàm con có thể gọi lại nhiều lần trong cùng một chương trình. Nhưng dữ liệu và giải thuật bị tách rời, khả năng tái sử dụng code giữa các dự án khác nhau kém; dễ bị phá vỡ cấu trúc khi xây dựng phần mềm quy mô lớn.
 
 ---
 
