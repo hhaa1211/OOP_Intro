@@ -21,9 +21,9 @@
 
 ---
 
-## 2. Phương pháp tiếp cận hướng đối tượng (Object-Oriented Approaches)
+## 2. Phương pháp tiếp cận hướng đối tượng
 
-### a. Lập trình hướng đối tượng (OOP)
+### a. Lập trình hướng đối tượng 
 * **Khái niệm:** Lấy "đối tượng" làm trung tâm, kết hợp cả dữ liệu (thuộc tính) và hành vi (phương thức) vào trong cùng một thực thể độc lập.
 * **Vai trò:** Giải quyết triệt để các nhược điểm của lập trình cấu trúc nhờ các tính chất cốt lõi:
   * **Đóng gói:** Bảo vệ dữ liệu nội bộ, tránh bị thay đổi tự do từ bên ngoài.
