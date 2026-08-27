@@ -29,11 +29,21 @@ có thể trừu tượng hóa đối tượng theo hai hướng: Theo chức n�
   là quá trình mô hình hóa các thuộc tính của lớp dữ liệu dựa trên các thuộc tính của các đối tượng tương ứng
      ví dụ với oto: Một chiếc xe có: nhãn hiệu, màu sắc, giá bán, công suất động cơ -> Đây chính là dữ liệu hay thuộc tính của ô tô
      ví dụ cụ thể về dữ liệu của ô tô: Giả sử chúng ta có 3 chiếc xe:
-     xe 1 - toyota                       xe 2 - honda                xe 3 - Ford         
-     nhãn hiệu: toyota                   nhãn hiệu: honda            nhãn hiệu: Ford
-     màu sắc: đen                        màu sắc: trắng              màu sắc: đỏ
-     giá bán: 700 triệu                  giá bán: 650 triệu          giá bán: 800 triệu
-     công suất: 150HP                    công suất: 140HP            công suất: 170HP 
+     xe 1 - toyota                       
+     nhãn hiệu: toyota                  
+     màu sắc: đen                       
+     giá bán: 700 triệu                 
+     công suất: 150HP
+     xe 2 - honda                      
+     nhãn hiệu: honda                  
+     màu sắc: đỏ                     
+     giá bán: 650 triệu                 
+     công suất: 160HP                
+     xe 2 - ford                     
+     nhãn hiệu: ford                  
+     màu sắc: trắng                   
+     giá bán: 800 triệu                 
+     công suất: 170HP                  
    Mặc dù giá trị xe khác nhau nhưng chúng đều có chung: Nhãn hiệu, Màu sắc, Giá bán, Công suất động cơ
      
    
