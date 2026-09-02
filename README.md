@@ -1,5 +1,45 @@
 # OOP_Intro
-Giới thiệu về lập trình hướng đối tượng
+
+## Giới thiệu về lập trình hướng đối tượng
+
+## Nhóm 5
+ - Nguyễn Kim Hoàng Hà 
+ - Nguyễn Hiền Phương
+ - Mào Thị Phương Loan
+ - Nguyễn Thị Ngọc Anh
+ - Lý Bảo Trâm
+
+## 
+
+## 1. Phương pháp tiếp cận truyền thống 
+### a. Lập trình tuyến tính 
+* **Khái niệm:** Là phương pháp tổ chức mã nguồn theo luồng thực thi đơn giản, chạy tuyến tính từ trên xuống dưới mà không chia nhỏ thành các hàm hay khối lệnh phức tạp.
+* **Đặc điểm:** Cấu trúc đơn luồng, Luồng chạy trực diện, cực kỳ dễ đọc. Nhưng khi quy mô chương trình mở rộng, mã nguồn nhanh chóng trở nên rườm rà, khó quản lý và không thể áp dụng cho các hệ thống phần mềm phức tạp.
+
+### b. Lập trình cấu trúc 
+* **Khái niệm:** Phương pháp chia nhỏ hệ thống lớn thành các hàm/chương trình con tự chứa, kết hợp với các cấu trúc điều khiển chuẩn (vòng lặp, rẽ nhánh).
+* **Đặc điểm:** Xoay quanh tư duy "Chương trình = Cấu trúc dữ liệu + Giải thuật", giúp mã nguồn mạch lạc, dễ truy vết lỗi; các hàm con có thể gọi lại nhiều lần trong cùng một chương trình. Nhưng dữ liệu và giải thuật bị tách rời, khả năng tái sử dụng code giữa các dự án khác nhau kém; dễ bị phá vỡ cấu trúc khi xây dựng phần mềm quy mô lớn.
+
+---
+
+## 2. Phương pháp tiếp cận hướng đối tượng
+
+### a. Lập trình hướng đối tượng 
+* **Khái niệm:** Lấy "đối tượng" làm trung tâm, kết hợp cả dữ liệu (thuộc tính) và hành vi (phương thức) vào trong cùng một thực thể độc lập.
+* **Vai trò:** Giải quyết triệt để các nhược điểm của lập trình cấu trúc nhờ các tính chất cốt lõi:
+  * **Đóng gói:** Bảo vệ dữ liệu nội bộ, tránh bị thay đổi tự do từ bên ngoài.
+  * **Tái sử dụng:** Dễ dàng dùng lại hoặc mở rộng mã nguồn sang các dự án khác mà không cần viết lại từ đầu.
+
+### b. Phân tích và Thiết kế hướng đối tượng
+* **Khái niệm:** Quy trình chuẩn hóa giúp chuyển đổi yêu cầu thực tế thành kiến trúc phần mềm hướng đối tượng qua các bước bài bản:
+  1. Mô tả chi tiết bài toán.
+  2. Đặc tả chính xác các yêu cầu.
+  3. Nhận diện các đối tượng tham gia vào hệ thống.
+  4. Mô hình hoá các đối tượng.
+  5. Bắt đầu từ thiết kế kiến trúc tổng quan đến chi tiết từng phương thức/dữ liệu.
+
+## 
+
 Đối tượng:
     - Khái niệm: Các thực thể trong hệ thống hoạt động khi chương trình đang chạy
     - Ba yếu tố xác định một đối tượng: định danh, trạng thái, hoạt động
@@ -24,4 +64,95 @@ Mối liên hệ giữa đối tượng và lớp đối tượng:
     Một lớp là một nguyên mẫu của một đối tượng
     Ví dụ: Trong một lớp học quy định mọi sinh viên dều có mã sinh viên, họ tên và hành động đi học. Đối tượng là các sinh viên cụ thể: sv1,sv2,..
   
-    
+##
+
+1. Trừu tượng hóa đối tượng là gì?
+- Trừu tượng hóa là việc chúng ta chỉ tập chung vào những thông tin và chức năng quan trọng của một đối tượng, còn những chi tiết bên trong không cần thiết thì bỏ qua.
+có thể trừu tượng hóa đối tượng theo hai hướng: Theo chức năng và Theo dữ liệu
+2. Trừu tượng hóa đối tượng theo chức năng
+- là quá trình mô hình hóa phương thức của lớp dựa trên các hành động của đối tượng
+  ví dụ: một chiếc ô tô có thể: khởi động máy, chạy, dừng lại,  tắt máy
+  đây đều là hành động, hay còn gọi là chức năng của ô tô
+3. Các bước thực hiện
+  B1: tập hợp tất cả các hành động có thể có của các đối tượng
+       vd: chúng ta có nhiều loại ô tô: Toyota, Honda, Ford
+           mỗi chiếc xe có thể có các hành động như: Khởi động, chạy, dừng lại, tắt máy, bật đèn, phát tín hiệu cảnh báo
+  B2: nhóm các đối tượng có hoạt động tương tự nhau
+      Toyota, Honda, Ford là những loại xe khác nhau nhưng đều có chức năng chung: khởi động máy, chạy, dừng lại,  tắt máy
+            vì vậy, chúng ta có thể gom những chức năng chung này vào một nhóm là ô tô
+  B3: mỗi nhóm đối tượng đề xuất một lớp tương ứng
+        Ta tạo một lớp: Lớp oto
+  B4: các hành động chung trở thành  phương thức của lớp
+      Các hành động: khởi động, chạy, dừng, tắt máy sẽ trở thành các phương thức của lớp oto
+  Trong lập trình có thể viết đơn giản:
+   class oto{
+         void KhoiDong();
+         void Chay();
+         void Dung();
+         void TatMay();
+  };
+  3. Trừu tượng hóa đối tượng theo dữ liệu
+  là quá trình mô hình hóa các thuộc tính của lớp dữ liệu dựa trên các thuộc tính của các đối tượng tương ứng
+     ví dụ với oto: Một chiếc xe có: nhãn hiệu, màu sắc, giá bán, công suất động cơ -> Đây chính là dữ liệu hay thuộc tính của ô tô
+     ví dụ cụ thể về dữ liệu của ô tô: Giả sử chúng ta có 3 chiếc xe:
+     xe 1 - toyota                       
+     nhãn hiệu: toyota                  
+     màu sắc: đen                       
+     giá bán: 700 triệu                 
+     công suất: 150HP
+     xe 2 - honda                      
+     nhãn hiệu: honda                  
+     màu sắc: đỏ                     
+     giá bán: 650 triệu                 
+     công suất: 160HP                
+     xe 2 - ford                     
+     nhãn hiệu: ford                  
+     màu sắc: trắng                   
+     giá bán: 800 triệu                 
+     công suất: 170HP                  
+   Mặc dù giá trị xe khác nhau nhưng chúng đều có chung: Nhãn hiệu, Màu sắc, Giá bán, Công suất động cơ
+
+## 
+
+Sự kế thừa:
+- Cho phép lớp dẫn xuất có thể sử dụng các thuộc tính và phương thức của lớp cơ sở
+- Chỉ cần cài đặt phương thức ở lớp cơ sở nhưng có thể sử dụng ở tất cả các dẫn xuất
+- Cho phép tránh sự cài đặt trùng lặp mã nguồn của chương trình (các lớp dẫn xuất có thể dùng lại code của lớp cơ sở nên không phải viết lại từ đầu)
+- Chỉ cần thay đổi dữ liệu ở lớp cơ sở thì những lớp dẫn xuất cũng được thay đổi theo mà ko cần thay đổi nhiều lần
+Sự đóng gói:
+- Cho phép che dấu sự cài đặt chi tiết bên trong của phương thức (chỉ cần biết phương thức đó dùng để làm gì ko cần biết nó hoạt động như thế nào)
+- Cho phép dấu dữ liệu bên trong của đối tượng (dữ liệu quan trọng được dấu bên trong ko cho bên ngoài tuỳ tiện thay đổi)
+- Cho phép hạn chế việc sửa lại mã chương trình (chương trình lỗi bên trong thì chỉ cần sửa bên trong, bên ngoài ít bị ảnh hưởng)
+Sự đa hình:
+- Cho phép các lớp được định nghĩa các phương thức trùng nhau
+- Khi gọi các phương thức trùng tên, dựa vào đối tượng đang gọi mà chương trình sẽ thực hiện phương thức của lớp tương ứng
+- Khi gọi các phương thức trùng tên, dựa vào đối tượng đang gọi mà chương trình sẽ thực hiện phương thức của lớp tương ứng (Mình gọi cùng một tên hàm, nhưng đối tượng nào gọi thì chương trình chạy phiên bản của đối tượng đó)
+
+##
+
+Giới thiệu về lập trình hướng đối tượng
+
+-thành phần private và public
++Thành phần public: là vùng của lớp mà vùng bên ngoài có thể truy cập có thể chia sẻ với các chương trình và đối tượng bên ngoài.
+Nó thường chứa set/get để thay đổi/lấy dữ liệu của thuộc tính và các phương thức trung gian/hàm phụ phục vụ để thực hiện chức năng của dối tượng 
++Thành phần private: là khu vực chỉ được truy cập trong nội bộ của lớp,bên ngoài lớp không được truy cập trực tiếp.
+Thành phần private thường chứa tất cả các thuộc tính dữ liệu của lớp vì không muốn bên ngoài tự ý thay đổi và các phương thức trung gian được sử dụng như các bước tính toán đệm cho các phương thức khác đó là những hàm phụ đứng phía sau để giúp các hàm khác làm việc
+VD1:
+-Private:
++tiền trong két
++đồ cá nhân
++ dữ liệu quan trọng
+-Public:
++ cửa ra vào
++ những thứ cho khách dùng
+VD2:
+class: SinhVien{
+private:
+    float diem;
+public:
+    void setDiem(float d) {
+    diem = d;
+  float getDiem() {
+     return diem;
+  }
+};
