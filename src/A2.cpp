@@ -90,13 +90,125 @@ public:
 // KHUNG LỚP QUẢN LÝ KHÁCH SẠN
 // ============================================================================
 class QuanLyKhachSan {
-private:
+private: 
+    PhongKhachSan dsPhong[200];
+    int n;
+
 
 public: 
     // ========================================================================
     // PHẦN 2: LÝ BẢO TRÂM
     // ========================================================================
+ // Constructor
+    QuanLyKhachSan() {
+        n = 0;
+    }
 
+    // Kiem tra ma phong da ton tai trong danh sach hay chua
+    bool trungMaPhong(string maPhong) {
+        for (int i = 0; i < n; i++) {
+            if (dsPhong[i].getMaPhong() == maPhong) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Nhap danh sach n phong
+    void nhapDanhSach() {
+        do {
+            cout << "Nhap so luong phong (0 < n < 200): ";
+            cin >> n;
+
+            if (n <= 0 || n >= 200) {
+                cout << "So luong phong khong hop le! Vui long nhap lai.\n";
+            }
+
+        } while (n <= 0 || n >= 200);
+
+        for (int i = 0; i < n; i++) {
+            cout << "\n========== NHAP PHONG THU " << i + 1 << " ==========\n";
+
+            dsPhong[i].nhap();
+
+            // Kiem tra ma phong trung
+            while (trungMaPhong(dsPhong[i].getMaPhong())) {
+                cout << "Ma phong da ton tai! Vui long nhap lai phong nay.\n";
+                dsPhong[i].nhap();
+            }
+        }
+
+        cout << "\nNhap danh sach phong thanh cong!\n";
+    }
+
+    // Xuat danh sach phong
+    void xuatDanhSach() {
+        if (n == 0) {
+            cout << "\nDanh sach phong dang rong!\n";
+            return;
+        }
+
+        cout << "\n========== DANH SACH PHONG KHACH SAN ==========\n";
+
+        for (int i = 0; i < n; i++) {
+            cout << "\n---------- PHONG THU " << i + 1 << " ----------\n";
+            dsPhong[i].xuat();
+        }
+    }
+
+    // Kiem tra du lieu danh sach
+    bool kiemTraDuLieu() {
+        // Kiem tra so luong phong
+        if (n <= 0 || n >= 200) {
+            cout << "Du lieu khong hop le: so luong phong phai 0 < n < 200.\n";
+            return false;
+        }
+
+        // Kiem tra tung phong
+        for (int i = 0; i < n; i++) {
+
+            // Kiem tra ma phong khong duoc rong
+            if (dsPhong[i].getMaPhong() == "") {
+                cout << "Du lieu khong hop le: phong thu "
+                     << i + 1 << " chua co ma phong.\n";
+                return false;
+            }
+
+            // Kiem tra tang
+            if (dsPhong[i].getTang() <= 0) {
+                cout << "Du lieu khong hop le: tang cua phong "
+                     << dsPhong[i].getMaPhong() << " phai > 0.\n";
+                return false;
+            }
+
+            // Kiem tra suc chua
+            if (dsPhong[i].getSucChua() <= 0) {
+                cout << "Du lieu khong hop le: suc chua cua phong "
+                     << dsPhong[i].getMaPhong() << " phai > 0.\n";
+                return false;
+            }
+
+            // Kiem tra gia thue
+            if (dsPhong[i].getGiaThue() <= 0) {
+                cout << "Du lieu khong hop le: gia thue cua phong "
+                     << dsPhong[i].getMaPhong() << " phai > 0.\n";
+                return false;
+            }
+
+            // Kiem tra ma phong trung nhau
+            for (int j = i + 1; j < n; j++) {
+                if (dsPhong[i].getMaPhong() == dsPhong[j].getMaPhong()) {
+                    cout << "Du lieu khong hop le: ma phong "
+                         << dsPhong[i].getMaPhong()
+                         << " bi trung.\n";
+                    return false;
+                }
+            }
+        }
+
+        cout << "Du lieu danh sach phong hop le!\n";
+        return true;
+    }
     // ========================================================================
     // PHẦN 3: NGUYỄN HIỀN PHƯƠNG
     // ========================================================================
