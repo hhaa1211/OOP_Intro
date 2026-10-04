@@ -1,4 +1,5 @@
 # OOP_Intro
+
 ## Giới thiệu về lập trình hướng đối tượng
 
 ## Nhóm 5
@@ -39,7 +40,32 @@
 
 ## 
 
-Giới thiệu về lập trình hướng đối tượng
+Đối tượng:
+    - Khái niệm: Các thực thể trong hệ thống hoạt động khi chương trình đang chạy
+    - Ba yếu tố xác định một đối tượng: định danh, trạng thái, hoạt động
+    - Ví dụ: Xe Ford màu trắng, giá 5000$:
+            + Định danh: biển số xe
+            +Trạng thái: màu trắng, nhãn Ford
+            + Hoạt động:nổ máy, tăng tốc, dừng lại
+Lớp đối tượng:
+    - Khái niệm: Là một khái niệm trừu tượng, dùng để chỉ một tập hợp các đối tượng có mặt trong hệ thống
+    - Ví dụ: Khái niệm xe hơi là một lớp dùng để chỉ tất cả các loại xe hơi nói chung
+    - Các thành phần chính: thuộc tính, phương thức
+     + Thuộc tính của lớp tương ứng với thực tính của đối tượng
+     + Phương thức của lớp tương ứng với hành động của đối tượng
+    - Các khả năng cấu trúc của một lớp:
+     Chỉ có thuộc tính, không có phương thức: dùng làm cấu trúc dữ liệu
+     Chỉ có phương thức, không có thuộc tính: dùng cho các lớp tiện ích xử lí logic mà không cần lưu giữ trạng thái
+     Có cả thuộc tính và phương thức:dạng phổ biến nhất của lập trình hướng đối tượng
+     Lớp trừu tượng: là lớp đặc biệt, không có đối tượng tương ứng
+Mối liên hệ giữa đối tượng và lớp đối tượng:
+    Lớp là sự trừu tượng hóa của các đối tượng, trong khi đối tượng là một thể hiện của lớp
+    Tất cả các đối tượng thuộc về cùng một lớp có cùng các thuộc tính và các phương thức
+    Một lớp là một nguyên mẫu của một đối tượng
+    Ví dụ: Trong một lớp học quy định mọi sinh viên dều có mã sinh viên, họ tên và hành động đi học. Đối tượng là các sinh viên cụ thể: sv1,sv2,..
+  
+##
+
 1. Trừu tượng hóa đối tượng là gì?
 - Trừu tượng hóa là việc chúng ta chỉ tập chung vào những thông tin và chức năng quan trọng của một đối tượng, còn những chi tiết bên trong không cần thiết thì bỏ qua.
 có thể trừu tượng hóa đối tượng theo hai hướng: Theo chức năng và Theo dữ liệu
@@ -85,3 +111,48 @@ có thể trừu tượng hóa đối tượng theo hai hướng: Theo chức n�
      giá bán: 800 triệu                 
      công suất: 170HP                  
    Mặc dù giá trị xe khác nhau nhưng chúng đều có chung: Nhãn hiệu, Màu sắc, Giá bán, Công suất động cơ
+
+## 
+
+Sự kế thừa:
+- Cho phép lớp dẫn xuất có thể sử dụng các thuộc tính và phương thức của lớp cơ sở
+- Chỉ cần cài đặt phương thức ở lớp cơ sở nhưng có thể sử dụng ở tất cả các dẫn xuất
+- Cho phép tránh sự cài đặt trùng lặp mã nguồn của chương trình (các lớp dẫn xuất có thể dùng lại code của lớp cơ sở nên không phải viết lại từ đầu)
+- Chỉ cần thay đổi dữ liệu ở lớp cơ sở thì những lớp dẫn xuất cũng được thay đổi theo mà ko cần thay đổi nhiều lần
+Sự đóng gói:
+- Cho phép che dấu sự cài đặt chi tiết bên trong của phương thức (chỉ cần biết phương thức đó dùng để làm gì ko cần biết nó hoạt động như thế nào)
+- Cho phép dấu dữ liệu bên trong của đối tượng (dữ liệu quan trọng được dấu bên trong ko cho bên ngoài tuỳ tiện thay đổi)
+- Cho phép hạn chế việc sửa lại mã chương trình (chương trình lỗi bên trong thì chỉ cần sửa bên trong, bên ngoài ít bị ảnh hưởng)
+Sự đa hình:
+- Cho phép các lớp được định nghĩa các phương thức trùng nhau
+- Khi gọi các phương thức trùng tên, dựa vào đối tượng đang gọi mà chương trình sẽ thực hiện phương thức của lớp tương ứng
+- Khi gọi các phương thức trùng tên, dựa vào đối tượng đang gọi mà chương trình sẽ thực hiện phương thức của lớp tương ứng (Mình gọi cùng một tên hàm, nhưng đối tượng nào gọi thì chương trình chạy phiên bản của đối tượng đó)
+
+##
+
+Giới thiệu về lập trình hướng đối tượng
+
+-thành phần private và public
++Thành phần public: là vùng của lớp mà vùng bên ngoài có thể truy cập có thể chia sẻ với các chương trình và đối tượng bên ngoài.
+Nó thường chứa set/get để thay đổi/lấy dữ liệu của thuộc tính và các phương thức trung gian/hàm phụ phục vụ để thực hiện chức năng của dối tượng 
++Thành phần private: là khu vực chỉ được truy cập trong nội bộ của lớp,bên ngoài lớp không được truy cập trực tiếp.
+Thành phần private thường chứa tất cả các thuộc tính dữ liệu của lớp vì không muốn bên ngoài tự ý thay đổi và các phương thức trung gian được sử dụng như các bước tính toán đệm cho các phương thức khác đó là những hàm phụ đứng phía sau để giúp các hàm khác làm việc
+VD1:
+-Private:
++tiền trong két
++đồ cá nhân
++ dữ liệu quan trọng
+-Public:
++ cửa ra vào
++ những thứ cho khách dùng
+VD2:
+class: SinhVien{
+private:
+    float diem;
+public:
+    void setDiem(float d) {
+    diem = d;
+  float getDiem() {
+     return diem;
+  }
+};
