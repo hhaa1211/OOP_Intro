@@ -201,66 +201,78 @@ public:
     // ========================================================================
     // PHẦN 3: NGUYỄN HIỀN PHƯƠNG
     // ========================================================================
-// Tim kiem theo ma phong
-
-void timTheoMa(PhongKhachSan ds[], int n) {
-
-    string ma;
-
-    bool timThay = false;
-
-    cout << "Nhap ma phong can tim: ";
-
-    cin >> ma;
-
-    for (int i = 0; i < n; i++) {
-
-        if (ds[i].getMaPhong() == ma) {
-
-            ds[i].xuat();
-
-            timThay = true;
-
+    // Sap xep danh sach theo gia thue tang dan
+    void sapXepTheoGiaTangDan() {
+        if (n == 0) {
+            cout << "\nDanh sach phong dang rong, khong the sap xep!\n";
+            return;
         }
-
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (dsPhong[i].getGiaThue() > dsPhong[j].getGiaThue()) {
+                    PhongKhachSan temp = dsPhong[i];
+                    dsPhong[i] = dsPhong[j];
+                    dsPhong[j] = temp;
+                }
+            }
+        }
+        cout << "\nDa sap xep danh sach phong theo gia thue tang dan thanh cong!\n";
     }
 
-    if (!timThay)
+    // Tim kiem theo ma phong
+    void timTheoMa() {
+        if (n == 0) {
+            cout << "\nDanh sach phong dang rong!\n";
+            return;
+        }
+        string ma;
+        bool timThay = false;
+        cout << "Nhap ma phong can tim: ";
+        cin >> ma;
 
-        cout << "Khong tim thay phong!\n";
-
-}
-
-// Tim kiem theo trang thai
-
-void timTheoTrangThai(PhongKhachSan ds[], int n) {
-
-    string tt;
-
-    bool timThay = false;
-
-    cin.ignore();
-
-    cout << "Nhap trang thai can tim: ";
-
-    getline(cin, tt);
-
-    for (int i = 0; i < n; i++) {
-
-        if (ds[i].getTrangThai() == tt) {
-
-            ds[i].xuat();
-
-            timThay = true;
-
+        for (int i = 0; i < n; i++) {
+            if (dsPhong[i].getMaPhong() == ma) {
+                cout << "\n---------- THONG TIN PHONG TIM THAY ----------\n";
+                dsPhong[i].xuat();
+                timThay = true;
+                break;
+            }
         }
 
+        if (!timThay) {
+            cout << "Khong tim thay phong co ma: " << ma << endl;
+        }
     }
 
-    if (!timThay)
+    // Tim kiem theo trang thai (0: Con trong, 1: Da thue)
+    void timTheoTrangThai() {
+        if (n == 0) {
+            cout << "\nDanh sach phong dang rong!\n";
+            return;
+        }
+        int tt;
+        do {
+            cout << "Nhap trang thai can tim (0: Con trong, 1: Da thue): ";
+            cin >> tt;
+        } while (tt != 0 && tt != 1);
 
-        cout << "Khong tim thay phong!\n";
-}
+        bool timThay = false;
+        bool loaiTrangThai = (tt == 1);
+
+        cout << "\n========== DANH SACH PHONG (" << (loaiTrangThai ? "DA THUE" : "CON TRONG") << ") ==========\n";
+        for (int i = 0; i < n; i++) {
+            if (dsPhong[i].getTrangThai() == loaiTrangThai) {
+                cout << "\n----------------------------------------\n";
+                dsPhong[i].xuat();
+                timThay = true;
+            }
+        }
+
+        if (!timThay) {
+            cout << "Khong co phong nao o trang thai nay!\n";
+        }
+    }
+
     // ========================================================================
     // PHẦN 4: NGUYỄN THỊ NGỌC ANH
     // ========================================================================
