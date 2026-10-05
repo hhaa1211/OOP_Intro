@@ -201,7 +201,66 @@ public:
     // ========================================================================
     // PHẦN 3: NGUYỄN HIỀN PHƯƠNG
     // ========================================================================
+// Tim kiem theo ma phong
 
+void timTheoMa(PhongKhachSan ds[], int n) {
+
+    string ma;
+
+    bool timThay = false;
+
+    cout << "Nhap ma phong can tim: ";
+
+    cin >> ma;
+
+    for (int i = 0; i < n; i++) {
+
+        if (ds[i].getMaPhong() == ma) {
+
+            ds[i].xuat();
+
+            timThay = true;
+
+        }
+
+    }
+
+    if (!timThay)
+
+        cout << "Khong tim thay phong!\n";
+
+}
+
+// Tim kiem theo trang thai
+
+void timTheoTrangThai(PhongKhachSan ds[], int n) {
+
+    string tt;
+
+    bool timThay = false;
+
+    cin.ignore();
+
+    cout << "Nhap trang thai can tim: ";
+
+    getline(cin, tt);
+
+    for (int i = 0; i < n; i++) {
+
+        if (ds[i].getTrangThai() == tt) {
+
+            ds[i].xuat();
+
+            timThay = true;
+
+        }
+
+    }
+
+    if (!timThay)
+
+        cout << "Khong tim thay phong!\n";
+}
     // ========================================================================
     // PHẦN 4: NGUYỄN THỊ NGỌC ANH
     // ========================================================================
