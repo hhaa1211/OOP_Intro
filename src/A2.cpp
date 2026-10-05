@@ -152,52 +152,6 @@ public:
         }
     }
 
-    // Kiem tra du lieu danh sach
-    bool kiemTraDuLieu() {
-        if (n <= 0 || n >= 200) {
-            cout << "Du lieu khong hop le: so luong phong phai 0 < n < 200.\n";
-            return false;
-        }
-
-        for (int i = 0; i < n; i++) {
-            if (dsPhong[i].getMaPhong() == "") {
-                cout << "Du lieu khong hop le: phong thu " 
-                     << i + 1 << " chua co ma phong.\n";
-                return false;
-            }
-
-            if (dsPhong[i].getTang() <= 0) {
-                cout << "Du lieu khong hop le: tang cua phong " 
-                     << dsPhong[i].getMaPhong() << " phai > 0.\n";
-                return false;
-            }
-
-            if (dsPhong[i].getSucChua() <= 0) {
-                cout << "Du lieu khong hop le: suc chua cua phong " 
-                     << dsPhong[i].getMaPhong() << " phai > 0.\n";
-                return false;
-            }
-
-            if (dsPhong[i].getGiaThue() <= 0) {
-                cout << "Du lieu khong hop le: gia thue cua phong " 
-                     << dsPhong[i].getMaPhong() << " phai > 0.\n";
-                return false;
-            }
-
-            for (int j = i + 1; j < n; j++) {
-                if (dsPhong[i].getMaPhong() == dsPhong[j].getMaPhong()) {
-                    cout << "Du lieu khong hop le: ma phong " 
-                         << dsPhong[i].getMaPhong() 
-                         << " bi trung.\n";
-                    return false;
-                }
-            }
-        }
-
-        cout << "Du lieu danh sach phong hop le!\n";
-        return true;
-    }
-
     // ========================================================================
     // PHẦN 3: NGUYỄN HIỀN PHƯƠNG
     // ========================================================================
