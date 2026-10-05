@@ -283,17 +283,39 @@ public:
             return;
         }
         if (viTri < 0 || viTri > n) {
-            cout << "\nVi tri khong hop le!\n";
+            cout << "\nVi tri khong hop le! Vi tri hop le tu 0 den " << n << endl;
             return;
         }
+
+        // Don mảng sang phai
         for (int i = n; i > viTri; i--) {
             dsPhong[i] = dsPhong[i - 1];
         }
+
         cout << "\nNhap thong tin phong moi:\n";
         dsPhong[viTri].nhap();
+
+        // Kiem tra trung ma voi tat ca cac phong khac trong danh sach
+        while (true) {
+            bool biTrung = false;
+            for (int i = 0; i <= n; i++) {
+                if (i != viTri && dsPhong[i].getMaPhong() == dsPhong[viTri].getMaPhong()) {
+                    biTrung = true;
+                    break;
+                }
+            }
+            if (biTrung) {
+                cout << "Ma phong da ton tai! Vui long nhap lai thong tin phong nay.\n";
+                dsPhong[viTri].nhap();
+            } else {
+                break;
+            }
+        }
+
         n++;
         cout << "\nThem phong thanh cong!\n";
     }
+
     // Xoa phong tai vi tri
     void xoaPhong(int viTri) {
         if (n == 0) {
@@ -301,7 +323,7 @@ public:
             return;
         }
         if (viTri < 0 || viTri >= n) {
-            cout << "\nVi tri khong hop le!\n";
+            cout << "\nVi tri khong hop le! Vi tri hop le tu 0 den " << n - 1 << endl;
             return;
         }
         for (int i = viTri; i < n - 1; i++) {
@@ -310,6 +332,7 @@ public:
         n--;
         cout << "\nXoa phong thanh cong!\n";
     }
+
     // Menu
     void menu() {
         int luaChon;
@@ -343,14 +366,14 @@ public:
                     break;
                 case 6: {
                     int viTri;
-                    cout << "Nhap vi tri can them: ";
+                    cout << "Nhap vi tri can them (0 -> " << n << "): ";
                     cin >> viTri;
                     themPhong(viTri);
                     break;
                 }
                 case 7: {
                     int viTri;
-                    cout << "Nhap vi tri can xoa: ";
+                    cout << "Nhap vi tri can xoa (0 -> " << n - 1 << "): ";
                     cin >> viTri;
                     xoaPhong(viTri);
                     break;
@@ -369,5 +392,7 @@ public:
 // PHẦN 5: NGUYỄN KIM HOÀNG HÀ (Nhóm trưởng)
 // ============================================================================
 int main() {
+    QuanLyKhachSan qlks;
+    qlks.menu();
     return 0;
 }
