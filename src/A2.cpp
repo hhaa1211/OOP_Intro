@@ -276,6 +276,93 @@ public:
     // ========================================================================
     // PHẦN 4: NGUYỄN THỊ NGỌC ANH
     // ========================================================================
+    // Them phong vao vi tri
+    void themPhong(int viTri) {
+        if (n >= 200) {
+            cout << "\nDanh sach phong da day!\n";
+            return;
+        }
+        if (viTri < 0 || viTri > n) {
+            cout << "\nVi tri khong hop le!\n";
+            return;
+        }
+        for (int i = n; i > viTri; i--) {
+            dsPhong[i] = dsPhong[i - 1];
+        }
+        cout << "\nNhap thong tin phong moi:\n";
+        dsPhong[viTri].nhap();
+        n++;
+        cout << "\nThem phong thanh cong!\n";
+    }
+    // Xoa phong tai vi tri
+    void xoaPhong(int viTri) {
+        if (n == 0) {
+            cout << "\nDanh sach phong dang rong!\n";
+            return;
+        }
+        if (viTri < 0 || viTri >= n) {
+            cout << "\nVi tri khong hop le!\n";
+            return;
+        }
+        for (int i = viTri; i < n - 1; i++) {
+            dsPhong[i] = dsPhong[i + 1];
+        }
+        n--;
+        cout << "\nXoa phong thanh cong!\n";
+    }
+    // Menu
+    void menu() {
+        int luaChon;
+        do {
+            cout << "\n========== MENU QUAN LY PHONG KHACH SAN ==========\n";
+            cout << "1. Nhap danh sach phong\n";
+            cout << "2. Xuat danh sach phong\n";
+            cout << "3. Sap xep theo gia thue tang dan\n";
+            cout << "4. Tim phong theo ma\n";
+            cout << "5. Tim phong theo trang thai\n";
+            cout << "6. Them phong tai vi tri\n";
+            cout << "7. Xoa phong tai vi tri\n";
+            cout << "0. Thoat\n";
+            cout << "Nhap lua chon: ";
+            cin >> luaChon;
+            switch (luaChon) {
+                case 1:
+                    nhapDanhSach();
+                    break;
+                case 2:
+                    xuatDanhSach();
+                    break;
+                case 3:
+                    sapXepTheoGiaTangDan();
+                    break;
+                case 4:
+                    timTheoMa();
+                    break;
+                case 5:
+                    timTheoTrangThai();
+                    break;
+                case 6: {
+                    int viTri;
+                    cout << "Nhap vi tri can them: ";
+                    cin >> viTri;
+                    themPhong(viTri);
+                    break;
+                }
+                case 7: {
+                    int viTri;
+                    cout << "Nhap vi tri can xoa: ";
+                    cin >> viTri;
+                    xoaPhong(viTri);
+                    break;
+                }
+                case 0:
+                    cout << "\nKet thuc chuong trinh!\n";
+                    break;
+                default:
+                    cout << "\nLua chon khong hop le!\n";
+            }
+        } while (luaChon != 0);
+    }
 };
 
 // ============================================================================
